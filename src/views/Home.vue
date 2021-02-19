@@ -49,7 +49,7 @@ export default {
         url: "http://localhost:3000/api/records",
         method: "get"
       })
-      console.log(data)
+      this.fetchData = data.data
     }
   }
 }
