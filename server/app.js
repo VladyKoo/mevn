@@ -17,7 +17,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(morgan("dev"))
 
-app.use("/", express.static(path.join(__dirname, "../client/dist")))
+app.use("/", express.static(path.join(__dirname, "../dist")))
 app.use("/api/records", require("./routes/records"))
 
 app.listen(port, () => {
