@@ -4,7 +4,7 @@ const morgan = require("morgan")
 const path = require("path")
 
 const app = express()
-const port = 3000
+const port = 80
 
 mongoose
   .connect("mongodb://localhost:27017/mevn", { useNewUrlParser: true })
