@@ -17,7 +17,11 @@
     </form>
     <div class="form">
       <button class="get__btn" @click="get">Get data</button>
-      {{ fetchData }}
+      <div v-for="(data, index) of fetchData" :key="index">
+        <span>{{ data._id }}</span>
+        <span>{{ data.email }}</span>
+        <span>{{ data.password }}</span>
+      </div>
     </div>
   </div>
 </template>
@@ -33,16 +37,15 @@ export default {
   }),
   methods: {
     async add() {
-      console.log(
-        await axios({
-          url: "http://194.67.109.251/api/records",
-          method: "post",
-          data: {
-            email: this.email,
-            password: this.password
-          }
-        })
-      )
+      const data = await axios({
+        url: "http://194.67.109.251/api/records",
+        method: "post",
+        data: {
+          email: this.email,
+          password: this.password
+        }
+      })
+      console.log(data)
     },
     async get() {
       const data = await axios({
