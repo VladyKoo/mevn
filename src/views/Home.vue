@@ -17,17 +17,16 @@
     </form>
     <div class="form">
       <button class="get__btn" @click="get">Get data</button>
-      <ul class="get__data">
-        <li
-          class="get__data-line"
-          v-for="(data, index) of fetchData"
-          :key="index"
-        >
-          <span class="get__data-item">{{ data._id }}</span>
-          <span class="get__data-item">{{ data.email }}</span>
-          <span class="get__data-item">{{ data.password }}</span>
-        </li>
-      </ul>
+
+      <div
+        class="get__data-line"
+        v-for="(data, index) of fetchData"
+        :key="index"
+      >
+        <span class="get__data-item">{{ data._id }}</span>
+        <span class="get__data-item">{{ data.email }}</span>
+        <span class="get__data-item">{{ data.password }}</span>
+      </div>
     </div>
   </div>
 </template>
@@ -87,15 +86,13 @@ export default {
   padding: 10px;
 }
 
-.get__data {
-}
-
 .get__data-line {
-  text-decoration: none;
+  margin-bottom: 5px;
 }
 
 .get__data-item {
   padding: 5px;
+  margin: 0 5px;
   border: 1px solid black;
 }
 </style>
