@@ -35,7 +35,7 @@ export default {
     async add() {
       console.log(
         await axios({
-          url: "http://localhost/api/records",
+          url: "http://194.67.109.251/api/records",
           method: "post",
           data: {
             email: this.email,
@@ -46,9 +46,10 @@ export default {
     },
     async get() {
       const data = await axios({
-        url: "http://localhost/api/records",
+        url: "http://194.67.109.251/api/records",
         method: "get"
       })
+      console.log(data.data)
       this.fetchData = data.data
     }
   }
